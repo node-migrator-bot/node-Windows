@@ -5,8 +5,10 @@ var q = require('./utility').q;
 
 
 
+module.exports = driveAlias;
 
-module.exports = function driveAlias(name, folder){
+
+function driveAlias(name, folder){
   switch (arguments.length) {
     case 0:
       return aliases = aliases();
@@ -14,11 +16,10 @@ module.exports = function driveAlias(name, folder){
       delete aliases.cache[name[0]];
       return subst(drive(name), '/d')[0] || true;
     case 2:
-      alias[name[0]] = folder = resolveDir(folder);
+      aliases[name[0]] = folder = resolveDir(folder);
       return subst(drive(name), q(folder))[0] || folder;
   }
 }
-
 
 var subst = new Command('subst');
 

@@ -3,7 +3,7 @@
   "name": "windows",
   "description": "A random but growing collection of utilities for Windows for Node.js",
   "tags": ["Windows", "win32", "registry", "regedit", "cmd", "fonts", "utility", "os", "platform"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/Benvie/node-Windows",
   "repository": {
     "type": "git",
