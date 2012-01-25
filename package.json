@@ -1,0 +1,19 @@
+{
+  "author": "Brandon Benvie <brandon@bbenvie.com> (http://bbenvie.com)",
+  "name": "windows",
+  "description": "A random but growing collection of utilities for Windows for Node.js",
+  "tags": ["Windows", "win32", "registry", "regedit", "cmd", "fonts", "utility", "os", "platform"],
+  "version": "0.0.1",
+  "homepage": "https://github.com/Benvie/node-Windows",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Benvie/node-Windows.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "0.6"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
