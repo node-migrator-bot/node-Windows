@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var exists = fs.existsSync || path.existsSync;
 
+var q = require('./utility').q;
 
 module.exports = {
   Command: Command,
@@ -16,9 +17,10 @@ module.exports = {
  * @param {String}  name        The command name which will become the function's name as well with spaces replaced by underscores
  * @param {Boolean} splitLines  Whether to automatically split all reponses into an array of lines
  */
-function Command(name, splitLines){
-  splitLines = splitLines !== false;
-  var run = eval(fn(name, 'return execSync("'+name+'", arguments)'+(splitLines ? '.trim().split(/\\r?\\n/g)' : '')));
+function Command(command, name, formatter){
+  formatter = formatter || function formatter(s){ return s.trim().split(/\r?\n/g) };
+  name = name || command;
+  var run = eval(fn(name, 'return formatter(execSync('+q(command)+', arguments))'));
   run.__proto__ = Command.prototype;
   return run;
 }
