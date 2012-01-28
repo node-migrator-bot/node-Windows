@@ -1,3 +1,6 @@
+// ### Usage
+// makerunnable somebin1.js [somebin2.js] ...
+
 var path = require('path');
 
 
