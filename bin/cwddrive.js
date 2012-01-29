@@ -6,9 +6,8 @@
 
 var path = require('path');
 
-var exists = require('../lib/utility').exists;
+var resolve = require('../lib/utility').resolve;
 var driveAlias = require('../lib/driveAlias');
-
 var cwd = process.cwd();
 
 
@@ -41,8 +40,8 @@ args.forEach(function(arg){
       process.exit();
     }
     drive = arg;
-  } else if (exists(arg)) {
-    folder = path.resolve(arg);
+  } else if (arg = resolve(arg)) {
+    folder = arg;
   }
 });
 

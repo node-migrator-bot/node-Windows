@@ -4,7 +4,7 @@
 var path = require('path');
 
 
-var exists = require('../lib/utility').exists;
+var resolve = require('../lib/utility').resolve;
 var runnable = require('../lib/runnable');
 var cwd = process.cwd();
 
@@ -14,12 +14,9 @@ if (path.resolve(args[0]) === __filename) {
 }
 
 args = args.reduce(function(args, arg){
-  if (!exists(arg)) {
-    arg = path.resolve(process.cwd(), arg);
-    if (!exists(arg)) {
-      console.log('Unable to find "'+arg+'"');
-      return args;
-    }
+  if (!(arg = resolve(cwd, arg))) {
+    console.log('Unable to find "'+arg+'"');
+    return args;
   }
   args.push(arg);
   return args;
