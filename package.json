@@ -4,7 +4,7 @@
   "description": "A random but growing collection of utilities for Windows for Node.js",
   "tags": ["Windows", "win32", "registry", "regedit", "cmd", "fonts",
            "utility", "os", "platform", "drive alias", "windows sdk"],
-  "version": "0.0.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/Benvie/node-Windows",
   "repository": {
     "type": "git",
@@ -12,13 +12,15 @@
   },
   "main": "index.js",
   "bin": {
-    "cwddrive": "./bin/cwddrive",
-    "makerunnable": "./bin/makerunnable"
+    "cwddrive": "./bin/cwddrive.js",
+    "makerunnable": "./bin/makerunnable.js"
   },
   "engines": {
-    "node": "0.6"
+    "node": "0.6-0.9"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "optionalDependencies": {}
+  "dependencies": {
+    "ffi": "~1.0",
+    "ref": "~0.0.10",
+    "ref-struct": "~0.0.3"
+  }
 }
